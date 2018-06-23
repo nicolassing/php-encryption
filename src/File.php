@@ -480,7 +480,7 @@ final class File
 
         /* We'll store the MAC of each buffer-sized chunk as we verify the
          * actual MAC, so that we can check them again when decrypting. */
-        $macs = [];
+        $macs = array();
 
         /* $thisIv will be incremented after each call to the decryption. */
         $thisIv = $iv;

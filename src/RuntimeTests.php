@@ -103,12 +103,12 @@ class RuntimeTests extends Crypto
         }
 
         // Modifying the ciphertext: Changing an HMAC byte.
-        $indices_to_change = [
+        $indices_to_change = array(
             0, // The header.
             Core::HEADER_VERSION_SIZE + 1, // the salt
             Core::HEADER_VERSION_SIZE + Core::SALT_BYTE_SIZE + 1, // the IV
             Core::HEADER_VERSION_SIZE + Core::SALT_BYTE_SIZE + Core::BLOCK_BYTE_SIZE + 1, // the ciphertext
-        ];
+        );
 
         foreach ($indices_to_change as $index) {
             try {
